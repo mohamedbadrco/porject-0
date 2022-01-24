@@ -1,0 +1,5 @@
+sakms
+aslas
+aslas,
+*
+>plaplaplaa

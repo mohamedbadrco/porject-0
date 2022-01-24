@@ -1,0 +1,36 @@
+{% extends "encyclopedia/layout.html" %}
+
+{% block title %}
+    Encyclopedia : {{ title }}
+{% endblock %}
+
+{% block body %}
+wiki >>{{ title }}
+
+{% if error %}
+
+{{  error }}
+
+<a href="{% url 'add' %}">Create New Page </a>
+
+
+{% else  %}
+
+
+<div class="page_content">
+    
+{% autoescape off %}
+
+
+    {{ content }}
+   
+    <a class="btn btn-primary" href="{% url 'index' %}wiki/{{title}}/edit">Edit</a>
+
+{% endautoescape %}
+   
+</div>
+
+{% endif %}
+    
+
+{% endblock %}
